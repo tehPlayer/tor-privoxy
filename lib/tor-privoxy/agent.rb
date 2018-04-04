@@ -41,7 +41,7 @@ module TorPrivoxy
 
     def ip
       @mechanize.get('http://canihazip.com/s').body
-    rescue exception
+    rescue StandardError => exception
       puts "error getting ip: #{exception.to_s}"
       return ""
     end
